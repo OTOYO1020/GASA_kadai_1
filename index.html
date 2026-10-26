@@ -8,7 +8,19 @@
 <body>
 <main>
   <header><a class="brand" href="./"><span class="mark">あ</span> ことのは</a><span class="badge">ブラウザ日本語入力</span></header>
-  <section class="intro"><p class="eyebrow">WORDS BEGIN HERE</p><h1>思いを、日本語に。</h1><p>ローマ字でつづって、かなに。候補を選んで、ことばに。<br>インストール不要の、小さな日本語入力ツールです。</p></section>
+  <section class="intro"><p class="eyebrow">LEARN JAPANESE, ONE WORD AT A TIME</p><h1>かなを見て、打って、覚えよう。</h1><p>はじめて日本語を学ぶ人のための、かな入力れんしゅう。<br>文字の形と入力のしかたを、少しずつ確かめましょう。</p></section>
+  <section class="lesson" aria-labelledby="lesson-title">
+    <p class="eyebrow">STEP 1 · かなの れんしゅう</p>
+    <h2 id="lesson-title">ことばを 入れてみよう</h2>
+    <p>お手本と同じかなになるように、ローマ字を入れてください。端末の入力モードは半角英数にします。</p>
+    <div class="lesson-controls"><label for="course">れんしゅうする文字</label><select id="course"><option value="basic">ひらがな：きほん</option><option value="special">ひらがな：小さい文字・ん</option><option value="katakana">カタカナ</option></select><span id="progress"></span></div>
+    <div class="prompt"><span id="target" lang="ja"></span><span id="meaning"></span></div>
+    <form id="practice-form"><label for="practice-input">ローマ字で 入力 / Type in romaji</label><input id="practice-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="practice-help"><p id="practice-help">Enter または「たしかめる」で答えを確認できます。</p><p>かな：<output id="practice-preview" for="practice-input" aria-live="polite">—</output></p><div class="practice-actions"><button type="submit" class="primary">たしかめる</button><button type="button" id="show-hint">ヒント</button><button type="button" id="next-question">つぎへ →</button></div></form>
+    <p id="practice-hint" hidden></p><p id="feedback" role="status">まちがえても大丈夫。何度でも れんしゅうできます。</p>
+    <details><summary>入力のしかたを見る：かな・ローマ字対応表</summary><div id="kana-chart" class="kana-chart"></div><p>し = shi / si、ち = chi / ti、つ = tsu / tu、ふ = fu / hu。ここでのローマ字はキーボード入力の方法です。</p><p>「っ」：gakkou → がっこう。「きゃ」：kya。「ん」：語末で nn、母音・y の前で n'（例：kan'i → かんい）。「こんにちは」の「は」は wa ではなく ha と入力します。</p></details>
+    <details><summary>先生へ：授業での使い方</summary><p>① お手本を読む → ② ローマ字で入力 → ③ かなの形を見比べる、の順で進めてください。漢字変換は下の自由入力で試せます。正解数は、このコースで正解した問題数です。つぎへ進むだけでは増えません。記録は再読み込みで消え、送信・保存されません。</p><p>本教材は文字と入力の練習用です。発音・筆順・日本語能力全体の評価は行いません。</p></details>
+  </section>
+  <h2 class="free-title">STEP 2 · じゆうに 書いてみよう</h2>
   <section class="workspace" aria-label="日本語入力エディター">
     <div class="toolbar"><span><span class="dot"></span> ローマ字 → ひらがな</span><button id="copy">コピー</button></div>
     <label for="document">確定したテキスト <span>直接編集できます</span></label>
@@ -25,5 +37,5 @@
   <section class="tips"><article><b>01 <span>ローマ字で入力</span></b><p>「konnichiha」「gakkou」などを入力。小さい「っ」や拗音にも対応。</p></article><article><b>02 <span>候補を選んで確定</span></b><p>Space で候補を切り替え、Enter で追加。候補のクリックでも確定できます。</p></article><article><b>03 <span>自由に編集してコピー</span></b><p>確定した文章は上の欄で編集。コピーして、好きな場所で使えます。</p></article></section>
   <p class="note">漢字変換は内蔵の小さな単語辞書に対応しています（例：nihongo、kyou、toukyou、hashi）。文章全体の自動変換・予測変換には対応していません。<br>このページ独自の入力を使うときは、端末の入力モードを半角英数にしてください。</p>
 </main>
-<script src="ime.js"></script><script src="app.js"></script>
+<script src="ime.js"></script><script src="app.js"></script><script src="practice.js"></script>
 </body></html>
